@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Animated, View } from 'react-native';
+import AddToWishlistButton from './components/AddToWishlistButton/AddToWishlistButton';
 import Carousel from './components/Carousel/Carousel';
 import ProductInfo from './components/ProductInfo/ProductInfo';
 import ShopMenu from './components/ShopMenu/ShopMenu';
@@ -31,7 +32,7 @@ const MainScreen: React.FC = () => {
         onPageChange={setCurrentPage}
         data={imageData}
       />
-
+      <AddToWishlistButton scrollYPosition={scrollYPosition} />
       {shopMenuActive && (
         <ShopMenu
           shops={PRODUCTS[currentPage].shopsAvailableIn}

@@ -4,13 +4,15 @@ import {
   Animated,
   Dimensions,
   ScrollView,
-  TouchableOpacity,
   useWindowDimensions,
   View,
 } from 'react-native';
 import { Product, ProductShop } from '../../types';
 import Text from '../Text';
-import BuyButton from './BuyButton';
+import Advertisements from './components/Advertisements/Advertisements';
+import BuyButton from './components/BuyButton/BuyButton';
+import Separator from './components/Separator';
+import SimilarProducts from './components/SimilarProducts/SimilarProducts';
 import { styles } from './styles';
 
 const getLowestPrice = (shops: ProductShop[]) => {
@@ -58,6 +60,10 @@ const ProductInfo: React.FC<Props> = ({
       });
     }
   };
+
+  useEffect(() => {
+    setIsRealButtonVisible(distanceFromBottomOfWindow < 0);
+  }, [distanceFromBottomOfWindow]);
 
   useEffect(() => {
     const id = scrollYPosition.addListener(({ value }) => {
@@ -122,17 +128,8 @@ const ProductInfo: React.FC<Props> = ({
               </Text>
             </Text>
           </View>
-          <View>
-            <Text fontSize={16}>{product.description}</Text>
-            <Text fontSize={16}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Text>
+          <View style={styles.productDescription}>
+            <Text fontSize={12}>{product.description}</Text>
           </View>
           <View
             style={[styles.buttonWrapper]}
@@ -144,26 +141,10 @@ const ProductInfo: React.FC<Props> = ({
               onPress={handleBuyButtonPress}
             />
           </View>
-          <View>
-            <Text fontSize={12}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Text>
-            <Text fontSize={12}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Text>
-          </View>
+          <Separator />
+          <Advertisements />
+          <Separator />
+          <SimilarProducts />
         </View>
       </ScrollView>
       {!isRealButtonVisible && (
@@ -171,7 +152,7 @@ const ProductInfo: React.FC<Props> = ({
           style={[
             styles.buttonWrapper,
             styles.buttonWrapperAbsolute,
-            { width: width - 32 },
+            { width: width - 32, paddingHorizontal: 0 },
           ]}
         >
           <BuyButton

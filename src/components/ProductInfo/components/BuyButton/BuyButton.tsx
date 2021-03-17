@@ -1,7 +1,7 @@
 import React from 'react';
 import { GestureResponderEvent, TouchableOpacity } from 'react-native';
-import { ProductShop } from '../../types';
-import Text from '../Text';
+import { ProductShop } from '../../../../types';
+import Text from '../../../Text';
 import { styles } from './styles';
 
 type Props = {

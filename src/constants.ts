@@ -5,10 +5,8 @@ export const IMAGE_HEIGHT = 448;
 export const PRODUCTS: Product[] = [
   {
     name: 'Royal Copenhagen Riflet kontrast krus',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.`,
+    description:
+      'Gør dine løbeture endnu bedre med Nike Air Zoom Pegasus 37. Med utrolig React-stødabsorbering og en ny Air-enhed i forfoden er de som et koffeinlyn til dine ben. Den lette overdel ånder helt utrolig godt. Den trimmede, perfekt placeret polstring hjælper med at eliminere hotspots. Og ydersålen med super godt greb? Tja, man skal holde sig på benene for at kunne løbe. Lad mudderet flyve og gaderne forsvinde bag dig.',
     image: require('../assets/pillow1.jpeg'),
     shopsAvailableIn: [
       { name: 'ELLOS.COM', stockStatus: 'in_stock', price: 79.95 },
@@ -16,12 +14,9 @@ export const PRODUCTS: Product[] = [
   },
   {
     name: 'Air Zoom Pegasus 37',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                  nulla pariatur.`,
+    description:
+      'Gør dine løbeture endnu bedre med Nike Air Zoom Pegasus 37. Med utrolig React-stødabsorbering og en ny Air-enhed i forfoden er de som et koffeinlyn til dine ben. Den lette overdel ånder helt utrolig godt.',
+
     image: require('../assets/pillow2.jpg'),
 
     shopsAvailableIn: [
@@ -33,13 +28,9 @@ export const PRODUCTS: Product[] = [
   {
     name: 'Some Product',
     image: require('../assets/pillow3.jpeg'),
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                  sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    description:
+      'Gør dine løbeture endnu bedre med Nike Air Zoom Pegasus 37. Med utrolig React-stødabsorbering og en ny Air-enhed i forfoden er de som et koffeinlyn til dine ben. Den lette overdel ånder helt utrolig godt. Den trimmede, perfekt placeret polstring hjælper med at eliminere hotspots. Og ydersålen med super godt greb? Tja, man skal holde sig på benene for at kunne løbe. Lad mudderet flyve og gaderne forsvinde bag dig. Og ydersålen med super godt greb? Tja, man skal holde sig på benene for at kunne løbe. Lad mudderet flyve og gaderne forsvinde bag dig.',
+
     shopsAvailableIn: [
       { name: 'Some shop 11', stockStatus: 'stock_unknown', price: 49.95 },
       { name: 'Some shop 21', stockStatus: 'in_stock', price: 39.95 },

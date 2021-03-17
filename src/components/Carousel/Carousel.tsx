@@ -83,16 +83,19 @@ const Carousel: React.FC<Props> = ({
           style={{
             width,
             height: height,
+            justifyContent: 'flex-start',
           }}
         >
           <Animated.Image
             source={item.image}
             style={{
               ...styles.absoluteTop,
-              height: height,
+              height,
+              width,
               resizeMode: 'cover',
               transform: [{ translateY: imageTranslate }],
             }}
+            resizeMode="contain"
           />
           <Animated.View
             style={{

@@ -2,7 +2,7 @@ import React from "react";
 import { StyleProp, Text as ReactNativeText, TextStyle } from "react-native";
 
 type Props = {
-  fontSize: number,
+  fontSize?: number,
   bold?: boolean;
   style?: StyleProp<TextStyle>;
 };

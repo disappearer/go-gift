@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "go-gift-1",
-    "slug": "go-gift-1",
+    "name": "go-gift",
+    "slug": "go-gift",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
