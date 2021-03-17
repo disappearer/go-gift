@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  Animated, NativeScrollEvent,
-  NativeSyntheticEvent, useWindowDimensions, View
+  Animated,
+  ImageURISource,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
+  useWindowDimensions,
+  View,
 } from 'react-native';
 import { styles } from './styles';
-
-const data = [
-  { key: '1', image: require('../../../assets/pillow1.jpeg') },
-  { key: '2', image: require('../../../assets/pillow2.jpg') },
-  { key: '3', image: require('../../../assets/pillow3.jpeg') },
-];
 
 const IMAGE_MIN_HEIGHT_TO_WINDOW_HEIGHT_RATIO = 0.2;
 
@@ -17,11 +15,29 @@ type Props = {
   scrollYPosition: Animated.Value;
   height: number;
   onPageChange: (pageNumber: number) => void;
+  data: { key: string; image: ImageURISource }[];
 };
-const Carousel: React.FC<Props> = ({ scrollYPosition, height, onPageChange }) => {
+const Carousel: React.FC<Props> = ({
+  scrollYPosition,
+  height,
+  onPageChange,
+  data,
+}) => {
   const { width, height: windowHeight } = useWindowDimensions();
   const imageMinHeight = windowHeight * IMAGE_MIN_HEIGHT_TO_WINDOW_HEIGHT_RATIO;
   const imageScrollDistance = height - imageMinHeight;
+
+  const [scrollEnabled, setScrollEnabled] = useState(true);
+
+  useEffect(() => {
+    const id = scrollYPosition.addListener(({ value }) => {
+      setScrollEnabled(value === 0);
+    });
+
+    return () => {
+      scrollYPosition.removeListener(id);
+    };
+  }, []);
 
   const imageViewTranslate = scrollYPosition.interpolate({
     inputRange: [0, imageScrollDistance],
@@ -60,6 +76,8 @@ const Carousel: React.FC<Props> = ({ scrollYPosition, height, onPageChange }) =>
       horizontal={true}
       pagingEnabled={true}
       onMomentumScrollEnd={onScrollEnd}
+      scrollEnabled={scrollEnabled}
+      showsHorizontalScrollIndicator={false}
       renderItem={({ item }) => (
         <View
           style={{
