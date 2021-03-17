@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { styles } from './styles';
 import Text from '../../../Text';
-import CloudIcon from '../../../CloudIcon';
+import CloudIcon from '../../../Icons/CloudIcon';
 
 const PRODUCT_IMAGE = require('../../../../../assets/img.png');
 const IMAGE_WIDTH = 140;

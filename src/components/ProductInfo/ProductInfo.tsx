@@ -23,6 +23,8 @@ const getLowestPrice = (shops: ProductShop[]) => {
 
 const BUTTON_WRAPPER_SIZE = 110; // calculated from styles
 
+const { statusBarHeight } = Constants;
+
 type Props = {
   scrollYPosition: Animated.Value;
   paddingTop: number;
@@ -38,7 +40,6 @@ const ProductInfo: React.FC<Props> = ({
   const { width, height: windowHeight } = useWindowDimensions();
   const { height: screenHeight } = Dimensions.get('screen');
 
-  const { statusBarHeight } = Constants;
   const navigationBarHeight = screenHeight - windowHeight - statusBarHeight;
 
   const squareRef = useRef<View>(null);
@@ -83,7 +84,7 @@ const ProductInfo: React.FC<Props> = ({
 
   return (
     <>
-      <ScrollView
+      <Animated.ScrollView
         style={styles.productInfo}
         showsVerticalScrollIndicator={false}
         onScroll={Animated.event(
@@ -96,7 +97,7 @@ const ProductInfo: React.FC<Props> = ({
               },
             },
           ],
-          { useNativeDriver: false },
+          { useNativeDriver: true },
         )}
       >
         <View
@@ -146,7 +147,7 @@ const ProductInfo: React.FC<Props> = ({
           <Separator />
           <SimilarProducts />
         </View>
-      </ScrollView>
+      </Animated.ScrollView>
       {!isRealButtonVisible && (
         <View
           style={[

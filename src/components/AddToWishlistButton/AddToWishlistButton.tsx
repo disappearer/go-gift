@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Animated, TouchableOpacity } from 'react-native';
-import CloudIcon from '../CloudIcon';
+import CloudIcon from '../Icons/CloudIcon';
 import Text from '../Text';
 import { styles } from './styles';
 

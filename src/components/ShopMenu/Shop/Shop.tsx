@@ -1,10 +1,10 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { ProductShop, StockStatus } from '../../../types';
-import InStockIcon from '../../InStockIcon';
-import OpenIcon from '../../OpenIcon';
-import OutOfStockIcon from '../../OutOfStockIcon';
-import StockUnknownIcon from '../../StockUnknownIcon';
+import InStockIcon from '../../Icons/InStockIcon';
+import OpenIcon from '../../Icons/OpenIcon';
+import OutOfStockIcon from '../../Icons/OutOfStockIcon';
+import StockUnknownIcon from '../../Icons/StockUnknownIcon';
 import Text from '../../Text';
 import { styles } from './styles';
 

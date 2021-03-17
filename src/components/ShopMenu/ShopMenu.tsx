@@ -5,7 +5,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import CloseIcon from '../../components/CloseIcon';
+import CloseIcon from '../Icons/CloseIcon';
 import Text from '../../components/Text';
 import { ProductShop } from '../../types';
 import Shop from './Shop/Shop';
@@ -26,7 +26,7 @@ const ShopMenu: React.FC<Props> = ({ shops, onClose }) => {
     Animated.timing(shopMenuAnimation, {
       toValue: 1,
       duration: SHOP_MENU_ANIMATION_DURATION,
-      useNativeDriver: false,
+      useNativeDriver: true,
     }).start();
   }, []);
 
@@ -58,7 +58,7 @@ const ShopMenu: React.FC<Props> = ({ shops, onClose }) => {
     Animated.timing(shopMenuAnimation, {
       toValue: 0,
       duration: SHOP_MENU_ANIMATION_DURATION,
-      useNativeDriver: false,
+      useNativeDriver: true,
     }).start();
   };
 
