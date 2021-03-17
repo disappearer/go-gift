@@ -15,8 +15,7 @@ export const PRODUCTS: Product[] = [
   {
     name: 'Air Zoom Pegasus 37',
     description:
-      'Gør dine løbeture endnu bedre med Nike Air Zoom Pegasus 37. Med utrolig React-stødabsorbering og en ny Air-enhed i forfoden er de som et koffeinlyn til dine ben. Den lette overdel ånder helt utrolig godt.',
-
+      'Gør dine løbeture endnu bedre med Nike Air Zoom Pegasus 37. Med utrolig React-stødabsorbering og en ny Air-enhed i forfoden er de som et koffeinlyn til dine ben. Den lette overdel ånder helt utrolig godt. Den trimmede, perfekt placeret polstring hjælper med at eliminere hotspots. Og ydersålen med super godt greb? Tja, man skal holde sig på benene for at kunne løbe. Lad mudderet flyve og gaderne forsvinde bag dig. Og ydersålen med super godt greb? Tja, man skal holde sig på benene for at kunne løbe. Lad mudderet flyve og gaderne forsvinde bag dig. Og ydersålen med super godt greb? Tja, man skal holde sig på benene for at kunne løbe. Lad mudderet flyve og gaderne forsvinde bag dig.',
     image: require('../assets/pillow2.jpg'),
 
     shopsAvailableIn: [

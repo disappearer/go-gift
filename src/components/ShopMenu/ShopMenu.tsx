@@ -26,7 +26,7 @@ const ShopMenu: React.FC<Props> = ({ shops, onClose }) => {
     Animated.timing(shopMenuAnimation, {
       toValue: 1,
       duration: SHOP_MENU_ANIMATION_DURATION,
-      useNativeDriver: true,
+      useNativeDriver: false,
     }).start();
   }, []);
 
@@ -58,7 +58,7 @@ const ShopMenu: React.FC<Props> = ({ shops, onClose }) => {
     Animated.timing(shopMenuAnimation, {
       toValue: 0,
       duration: SHOP_MENU_ANIMATION_DURATION,
-      useNativeDriver: true,
+      useNativeDriver: false,
     }).start();
   };
 
